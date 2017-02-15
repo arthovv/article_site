@@ -1,0 +1,129 @@
+html{  /* tzw. root html*/     font-size: 62.5%; /* jak tutaj to zdefiniujemy
+to możemy sobie manewrowac czcionką dowolnie zmieniamy a pozostałe elementy
+zmieniaja się proporcjonalnie*/ }
+
+body{
+	margin: 0px;
+	padding: 0px;
+
+	font-family: 'Josefin Sans', sans-serif;
+	color: #37474F;
+	font-size: 1.6rem; /*wychodzi 16px */
+}
+
+/* ROBIMY HAMBURGER MENU Z 3 KRESKAMI */
+.hamburger{
+	width: 4rem;
+	height: 3.5rem;
+	border: 0;
+	background: transparent; /* czyści domyslne tło buttona*/
+	border-top: 0.5rem solid #FFFFFF; /*góra hamburgera*/
+	position: relative; /*wzgledem dziecka*/
+	transition: 0.3s transform linear; /* ile trwa animacja, co animujemy, jaki rodzaj animacji*/
+	}
+.hamburger::after, .hamburger::before{ /* uzywamy pseudo elementów że zrobic reszte hambuksa, to są dzieci klasy: .hamburger*/
+    content: '';
+    position: absolute; /*względem rodzica*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 0.5rem solid #FFFFFF; /*terz nachodzą na sibie z góra hamburgera ale poprawimy to niżej*/
+}
+.hamburger::after{ /*dól hamburgera*/
+	transform: translateY(2.5rem); /*przesuwamy na dół, ale tak zeby pomieściło się w kontenerze*/
+	transition: 0.3s transform linear; /* ile trwa animacja, co animujemy, jaki rodzaj animacji*/
+}
+.hamburger::before{ /*środek hamburgera*/
+	transform: translateY(1rem);
+}
+
+/*EFEKT ANIMACJI HAMBURGERA*/
+
+.hamburger:focus{ /* jeśli kliknie i nie odkliknie nic innego to bedzie tak wyglądał*/
+	transform: rotate(45deg) translateX(-0.5rem) translateX(0.5rem);/*zeby nie uciekał w lewo*/
+	border: none; /* usuwa tylko góre hamburgera, bo jest ona na głównym buttonie, a nie pseudoobiektach*/
+}
+.hamburger:focus::after{
+	transform: rotate(-90deg) translateX(-1rem);
+	
+}
+
+/*------------------------------------------------------*/
+.nav-menu{
+	list-style: none;
+}
+
+
+.page-header{
+	position:absolute; /*nagłówek artytkulu z dołu dojedzie nam do góry*/
+	width: 100%;
+	box-sizing: border-box; /* wlicza nam padding w szerokośc 100%, a nie szerokośc 100% + padding*/
+	padding-top: 2.8rem;
+	padding: 2rem;
+}
+.page-header .page-logo{
+	width: 20rem;
+	border-radius: 3rem;
+}
+
+.page-header .hamburger{
+	position: absolute;
+	right: 2.5rem;
+	top:2.5rem;
+	
+}
+.page-nav .nav-menu{
+	/*display: none;*/
+	padding:0;
+	padding-top: 1rem;
+	margin:0;
+	text-align: center;
+}
+
+.page-nav .nav-menu li a{
+	color: #000000;
+	text-decoration: none;
+}
+.page-nav .nav-menu li{
+	border-bottom: 1px solid #E6E6FA;
+	padding: 1.4rem 0;
+	font-size: 1.8rem;
+
+}
+.page-nav .nav-menu li.sign-up{
+	border: 0;
+	margin-top: 2rem;
+}
+.page-nav .nav-menu li.sign-up a{
+	border: 2px solid #87CEFA;
+	border-radius: 2rem;
+	padding: 1rem 2rem 1rem 2rem;
+
+}
+.page-header.nav-opened { /* jak beda aktywne w tym samym czasie*/
+	background-color: #FFFFFF;
+	box-shadow: -1px 9px 19px -8px rgba(0, 0, 0, 0.49)
+}
+.page-header.nav-opened .page-nav .hamburger{
+	border-top-color: #000000;
+}
+.page-header.nav-opened .page-nav .hamburger::after, .hamburger::before{
+	border-top-color: #000000;
+	}
+
+.article-header{
+	background: url(image/tlo.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50%;
+
+	padding-top: 12rem;
+}
+.article-title{
+	margin:0;
+}
+#author-img{
+	width: 10rem;
+}
+.article-pic img{
+	max-width: 100%;
+}
