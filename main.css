@@ -13,11 +13,11 @@ body{
 
 /* ROBIMY HAMBURGER MENU Z 3 KRESKAMI */
 .hamburger{
-	width: 4rem;
-	height: 3.5rem;
+	width: 3rem;
+	height: 1.75rem;
 	border: 0;
 	background: transparent; /* czyści domyslne tło buttona*/
-	border-top: 0.5rem solid #FFFFFF; /*góra hamburgera*/
+	border-top: 0.4rem solid #FFFFFF; /*góra hamburgera*/
 	position: relative; /*wzgledem dziecka*/
 	transition: 0.3s transform linear; /* ile trwa animacja, co animujemy, jaki rodzaj animacji*/
 	}
@@ -27,26 +27,31 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    border-top: 0.5rem solid #FFFFFF; /*terz nachodzą na sibie z góra hamburgera ale poprawimy to niżej*/
+    border-top: 0.4rem solid #FFFFFF; /*terz nachodzą na siebie z góra hamburgera ale poprawimy to niżej*/
 }
 .hamburger::after{ /*dól hamburgera*/
-	transform: translateY(2.5rem); /*przesuwamy na dół, ale tak zeby pomieściło się w kontenerze*/
+	transform: translateY(1.2rem); /*przesuwamy na dół, ale tak zeby pomieściło się w kontenerze*/
 	transition: 0.3s transform linear; /* ile trwa animacja, co animujemy, jaki rodzaj animacji*/
 }
+
 .hamburger::before{ /*środek hamburgera*/
-	transform: translateY(1rem);
+	transform: translateY(0.4rem);
 }
 
 /*EFEKT ANIMACJI HAMBURGERA*/
 
-.hamburger:focus{ /* jeśli kliknie i nie odkliknie nic innego to bedzie tak wyglądał*/
+
+
+.nav-opened .hamburger:focus{ /* jeśli kliknie i nie odkliknie nic innego to bedzie tak wyglądał*/
 	transform: rotate(45deg) translateX(-0.5rem) translateX(0.5rem);/*zeby nie uciekał w lewo*/
 	border: none; /* usuwa tylko góre hamburgera, bo jest ona na głównym buttonie, a nie pseudoobiektach*/
 }
-.hamburger:focus::after{
-	transform: rotate(-90deg) translateX(-1rem);
-	
+.nav-opened .hamburger:focus:after{
+	transform: rotate(-90deg) translateX(-0.425rem);
 }
+
+
+
 
 /*------------------------------------------------------*/
 .nav-menu{
@@ -62,7 +67,7 @@ body{
 	padding: 2rem;
 }
 .page-header .page-logo{
-	width: 20rem;
+	width: 15rem;
 	border-radius: 3rem;
 }
 
@@ -73,12 +78,14 @@ body{
 	
 }
 .page-nav .nav-menu{
-	/*display: none;*/
+	display: none;
 	padding:0;
 	padding-top: 1rem;
 	margin:0;
 	text-align: center;
 }
+
+
 
 .page-nav .nav-menu li a{
 	color: #000000;
@@ -102,27 +109,48 @@ body{
 }
 .page-header.nav-opened { /* jak beda aktywne w tym samym czasie*/
 	background-color: #FFFFFF;
-	box-shadow: -1px 9px 19px -8px rgba(0, 0, 0, 0.49)
+	box-shadow: 0px 9px 17px 0px rgba(26,43,128,1);
 }
 .page-header.nav-opened .page-nav .hamburger{
 	border-top-color: #000000;
 }
-.page-header.nav-opened .page-nav .hamburger::after, .hamburger::before{
+.page-header.nav-opened .page-nav .hamburger::after{
 	border-top-color: #000000;
 	}
+.page-header.nav-opened .page-nav .hamburger::before{
+	border-top-color: #000000;
+}
+.page-header.nav-opened .page-nav .nav-menu{
+	display: block;
+}
 
 .article-header{
 	background: url(image/tlo.jpg) no-repeat;
 	background-size: cover;
 	background-position: 50%;
+	color: #FFFFFF;
+	text-align: center;
+	height: 60vh; /* 60% viewport*/
 
+	padding: 4rem;
 	padding-top: 12rem;
 }
 .article-title{
 	margin:0;
 }
 #author-img{
-	width: 10rem;
+	width: 7rem;
+	border-radius: 5px 20px 5px;
+	margin-top: 3rem;
+}
+.article-header div{
+	padding: 0;
+	margin: 0;
+}
+.article-header div p,.article-header div time{
+	padding: 0;
+	margin: 0;
+	font-size: 1.2rem;
 }
 .article-pic img{
 	max-width: 100%;
