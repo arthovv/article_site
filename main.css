@@ -60,7 +60,7 @@ body{
 
 
 .page-header{
-	position:absolute; /*nagłówek artytkulu z dołu dojedzie nam do góry*/
+	position:absolute; /*nagłówek artytkulu z dołu dojedzie do góry*/
 	width: 100%;
 	box-sizing: border-box; /* wlicza nam padding w szerokośc 100%, a nie szerokośc 100% + padding*/
 	padding-top: 2.8rem;
@@ -132,7 +132,7 @@ body{
 	background-position: 50%;
 	color: #FFFFFF;
 	text-align: center;
-	min-height: 60vh; /* 60% viewport*/
+	min-height: 50vh; /* 60% viewport*/
 
 	padding: 2rem;
 	padding-top: 12rem;
@@ -191,7 +191,7 @@ article figure figcaption{
 }
 .text{
 	padding: 1.5rem;
-	border-box: box-sizing;
+	box-sizing: border-box;
 }
 .text p{
 	margin-top: 3rem;
@@ -226,4 +226,73 @@ article figure figcaption{
 }
 .copyright{
 	margin: 0px;
+}
+
+@media (min-width: 40em){
+	.page-header{
+		left: 0;
+		right: 0;
+	}
+	
+	.hamburger{
+		display: none;
+	}
+	.page-nav .nav-menu{
+	position: absolute;
+	right: 0;
+	top:0;
+	display: inline-block;
+	padding:0;
+	margin:0;
+	text-align: center;
+}
+
+
+
+.page-nav .nav-menu li a{
+	color: #ffffff;
+	text-decoration: none;
+}
+.page-nav .nav-menu li{
+	font-size: 1.8rem;
+	border:none;
+	float: left;
+	padding: 2rem;
+	padding-top: 3rem;
+
+}
+.page-nav .nav-menu li.sign-up{
+	margin-top: 0;
+
+}
+.page-nav .nav-menu li.sign-up a{
+	border: 2px solid #87CEFA;
+	border-radius: 2rem;
+	padding: 1rem 2rem 1rem 2rem;
+	box-sizing: border-box;
+
+}
+
+.article-pic img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+article figure.article-pic{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 1rem;
+	max-width: 60rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.article-content{
+	max-width: 102rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+.page-header{
+	max-width: 102rem;
+	margin-left: auto;
+	margin-right: auto;
+}
 }
