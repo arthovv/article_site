@@ -54,9 +54,6 @@ body{
 
 
 /*------------------------------------------------------*/
-.nav-menu{
-	list-style: none;
-}
 
 
 .page-header{
@@ -85,11 +82,15 @@ body{
 	text-align: center;
 }
 
-
+.nav-menu{
+	list-style: none;
+}
 
 .page-nav .nav-menu li a{
 	color: #000000;
 	text-decoration: none;
+}
+
 }
 .page-nav .nav-menu li{
 	border-bottom: 1px solid #E6E6FA;
@@ -228,6 +229,10 @@ article figure figcaption{
 	margin: 0px;
 }
 
+
+
+/* -- ------------------------------------------------------------------------ 	*/
+
 @media (min-width: 40em){
 	.page-header{
 		left: 0;
@@ -249,11 +254,11 @@ article figure figcaption{
 
 
 
-.page-nav .nav-menu li a{
+.page-nav .nav-menu > li > a{
 	color: #ffffff;
 	text-decoration: none;
 }
-.page-nav .nav-menu li{
+.page-nav .nav-menu>li{
 	font-size: 1.8rem;
 	border:none;
 	float: left;
@@ -270,6 +275,42 @@ article figure figcaption{
 	border-radius: 2rem;
 	padding: 1rem 2rem 1rem 2rem;
 	box-sizing: border-box;
+
+}
+
+.expand-menu{
+	position: absolute;
+	left:-2rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	max-width: 15rem;
+	background-color: #ccffff;
+
+}
+.expand-menu li{
+	display: block;
+	padding:0.5rem 2rem;
+	border-bottom: 1px solid #0052cc;
+}
+.expand-menu li:last{
+	border-bottom: none;
+}
+.expand-menu>li:hover{
+	transform: scale(1);
+
+}
+
+.expand-menu li a{
+	font-size: 1.6rem;
+	color: #0052cc;
+}
+
+.expand-menu.exp-menu-opened{
+	position: absolute;
+	display: block;
+
 
 }
 
