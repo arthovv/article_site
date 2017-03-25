@@ -91,10 +91,9 @@ body{
 	text-decoration: none;
 }
 
-}
 .page-nav .nav-menu li{
 	border-bottom: 1px solid #E6E6FA;
-	padding: 1.4rem 0;
+	padding: 1.6rem 0;
 	font-size: 1.8rem;
 
 }
@@ -125,6 +124,14 @@ body{
 	display: block;
 }
 
+.page-header.nav-opened .expand-menu{
+	list-style: none;
+	padding: 0;
+}
+.page-header.nav-opened .expand-menu li a{
+	color: #00BFFF;
+}
+
 .article-header{
 	box-sizing: border-box;
 
@@ -133,7 +140,7 @@ body{
 	background-position: 50%;
 	color: #FFFFFF;
 	text-align: center;
-	min-height: 50vh; /* 60% viewport*/
+	min-height: 50vh; /* 50% viewport*/
 
 	padding: 2rem;
 	padding-top: 12rem;
@@ -233,7 +240,9 @@ article figure figcaption{
 
 /* -- ------------------------------------------------------------------------ 	*/
 
-@media (min-width: 40em){
+@media (min-width: 45rem)
+{
+
 	.page-header{
 		left: 0;
 		right: 0;
@@ -259,15 +268,17 @@ article figure figcaption{
 	text-decoration: none;
 }
 .page-nav .nav-menu>li{
+	width: 14rem;
+
 	font-size: 1.8rem;
 	border:none;
 	float: left;
-	padding: 2rem;
 	padding-top: 3rem;
 
 }
 .page-nav .nav-menu li.sign-up{
 	margin-top: 0;
+	width: 15rem;
 
 }
 .page-nav .nav-menu li.sign-up a{
@@ -279,13 +290,13 @@ article figure figcaption{
 }
 
 .expand-menu{
-	position: absolute;
-	left:-2rem;
+
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	text-align: center;
 
-	max-width: 15rem;
+	min-width: 15rem;
 	background-color: #ccffff;
 
 }
@@ -294,25 +305,24 @@ article figure figcaption{
 	padding:0.5rem 2rem;
 	border-bottom: 1px solid #0052cc;
 }
-.expand-menu li:last{
+.expand-menu li:last-child{
 	border-bottom: none;
 }
-.expand-menu>li:hover{
-	transform: scale(1);
 
-}
 
 .expand-menu li a{
 	font-size: 1.6rem;
-	color: #0052cc;
+	color: #ffffff;
 }
 
 .expand-menu.exp-menu-opened{
-	position: absolute;
 	display: block;
-
+}
 
 }
+
+@media (min-width: 40em){
+	
 
 .article-pic img{
 	display: block;
