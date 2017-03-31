@@ -1,0 +1,67 @@
+
+.sign-up label input{
+  display:block;
+  border:1px solid #99aa99;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.sign-up .row{
+  margin-bottom: 5px;
+}
+progress {
+  margin: 10px 0;
+  width: 100%;
+}
+
+body::after{
+  content:"";
+ 
+  position: fixed;
+  top :0;
+  bottom:0;
+  right: 0;
+  left:0;
+  opacity: 0;
+  background: rgb(0,0,0);
+  z-index: -1;
+  transition: opacity 0.5s;
+  
+}
+body.modal-open::after{
+  opacity:0.6;
+  
+}
+
+.close{
+  text-align:right;
+}
+.close:hover{
+  cursor: pointer;
+}
+
+
+.modal {
+  position :fixed;
+  z-index: 999;
+  background: white;
+  padding: 25px;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%)  translateY(-50%);
+  border: solid 2px #000000;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+body.modal-open .modal{
+  opacity: 1;
+}
+
+
+.char{
+    font-size: 75%;
+    margin-top:0;
+    padding-top:0;
+    color:red;
+}
