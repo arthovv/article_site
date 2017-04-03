@@ -8,7 +8,9 @@ s<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="Modal/script.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="Modal/style.css">
 	<title>Artykuł</title>
 </head>
 <body>
@@ -42,8 +44,65 @@ s<!DOCTYPE html>
 						<li><a href="#">3Lorem Ipsum nr 4</a></li>
 					</ul>
 				</li>
-				<li class="sign-up"><a href="#" title="Zarejestruj się jęsli nie masz konta">Zarejestruj się</a></li>
-			</ul>
+				<li class="sign-up createAccount-btn" title="Zarejestruj się jęsli nie masz konta">
+					<a href="#">Zarejestruj się</a>
+				</li>
+				</ul
+					 <div class="modal-container">
+    
+    <div class="modal">
+      <div class="close">[X]</div>
+      <h2>Założ konto:</h2>
+    <form class="sign-up">
+      <div class="row">
+        <label for="firstname">Imię: 
+          <input type="text" id= "firstname" placeholder="Imię">
+        </label>
+      </div>
+      <div class="row"> 
+        <label for="lastname">Nazwisko: 
+          <input type="text" id= "lastname" placeholder="Nazwisko">
+        </label>
+      </div>
+      <div class="row">
+        <label for="email">E-mail: 
+          <input type="" id="email" placeholder="Adres E-mail">
+        </label>
+      </div>
+      <div class="row">
+        <label for="dateofbirth">Rok urodzenia:
+         <select name="dateofbirth" id=" dateofbirth">
+           <option value="">1900</option>
+           <option value="">2000</option>
+           <option value="">2010</option>
+         </select>
+       </label>
+      </div>
+      <div class="row pass-container">
+        <label for="password">Hasło: 
+          <input type="text" id="password" placeholder="Hasło"> 
+          <progress id ="passwordComplete" value="0"></progress>
+        </label>
+      </div>
+      <div class="row">
+        <label for="enterpass">Powtorz hasło: 
+          <input type="text" id="enterpass" placeholder="Powtórz hało">
+        </label>
+      </div>
+      <div class="row">
+        <label for="aFewWords">Napisz kilka słów o sobie : 
+          <input type="text" id="fewWords" maxlength="50">
+          <span class="char">Pozostało znaków: </span>
+          <span class="char howMuchChar"> X</span>
+        </label>
+      </div>
+      <div class="row">
+        <button type="submit"> Zarejestruj się</button>
+      </div>
+    </form>
+    </div>
+  </div>
+			>
 			<button type="button" title="Open menu" class="hamburger"></button>
 		</nav>
 	</header>
