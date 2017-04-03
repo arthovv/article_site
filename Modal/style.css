@@ -1,5 +1,5 @@
 
-.sign-up label input{
+.input{
   display:block;
   border:1px solid #99aa99;
   border-radius: 5px;
@@ -10,12 +10,14 @@
   margin-bottom: 5px;
 }
 progress {
-  margin: 10px 0;
+  margin: 10px 0 5px 0px;
   width: 100%;
 }
 
 body::after{
   content:"";
+  display: none;
+   z-index: 1;
  
   position: fixed;
   top :0;
@@ -24,12 +26,12 @@ body::after{
   left:0;
   opacity: 0;
   background: rgb(0,0,0);
-  z-index: -1;
   transition: opacity 0.5s;
   
 }
 body.modal-open::after{
   opacity:0.6;
+  display:block;
   
 }
 
@@ -52,6 +54,7 @@ body.modal-open::after{
   border: solid 2px #000000;
   opacity: 0;
   transition: opacity 0.5s;
+  border-radius: 1rem;
 }
 
 body.modal-open .modal{
@@ -64,4 +67,8 @@ body.modal-open .modal{
     margin-top:0;
     padding-top:0;
     color:red;
+}
+
+.input.wrong-value{
+  border-color: red;
 }

@@ -86,7 +86,7 @@ body{
 	list-style: none;
 }
 
-.page-nav .nav-menu li a{
+.page-nav >.nav-menu >li >a{
 	color: #000000;
 	text-decoration: none;
 }
@@ -263,7 +263,7 @@ article figure figcaption{
 
 
 
-.page-nav .nav-menu > li > a{
+.page-nav >.nav-menu > li > a{
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -297,7 +297,8 @@ article figure figcaption{
 	text-align: center;
 
 	min-width: 15rem;
-	background-color: #ccffff;
+	background-color: #1E90FF;
+	border-radius: 1rem;
 
 }
 .expand-menu li{
@@ -310,9 +311,10 @@ article figure figcaption{
 }
 
 
-.expand-menu li a{
+.expand-menu>li a{
 	font-size: 1.6rem;
 	color: #ffffff;
+	text-decoration: none;
 }
 
 .expand-menu.exp-menu-opened{
