@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  var password = document.querySelector('#password');
+  var enterpass = document.querySelector('#enterpass');
+
+
+  password.addEventListener('blur',isPasswordCorrect,false);
+  enterpass.addEventListener('blur',isPasswordCorrect);
       document.addEventListener("keyup", function (event) {
         if (event.keyCode === 27) closeModal();
       }, false);
@@ -61,13 +68,16 @@ function howMuchChar() {
 }
 
 function closeModal() {
+  isPasswordCorrect();
     document.body.classList.remove('modal-open');
-    var data = document.querySelectorAll('.sign-up label input');
-    for(i=0; i<data.length; i++)
+    document.querySelector('form.sign-up').reset();
+    var input  = document.querySelectorAll('.input');
+    var inputLength = input.length;
+    console.log(inputLength);
+      for (i=0; i<inputLength; i++)
       {
-        if(data[i].value)
-          data[i].value="";
-      }
+        input[i].classList.remove('wrong-value');
+      };
 }
 
 function checkName(value,index){
@@ -118,6 +128,29 @@ function checkpass(password){
  progress.value = strength.value;
  progress.max = strength.max;
  
+}
+
+
+
+function isPasswordCorrect() {
+
+  var passwordValue = password.value;
+  var enterpassValue = enterpass.value;
+  
+    if(enterpassValue!=""){
+      if(passwordValue!==enterpassValue) {
+        console.log('Hasło nie się zgadza');
+        password.classList.add('wrong-value');
+        enterpass.classList.add('wrong-value');
+      }  else {
+        console.log('hasło zgadza się');
+        password.classList.remove('wrong-value');
+        enterpass.classList.remove('wrong-value');
+      }
+    } else{
+      password.classList.remove('wrong-value');
+      enterpass.classList.remove('wrong-value');
+    }
 }
 
 
